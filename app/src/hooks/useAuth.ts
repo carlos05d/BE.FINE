@@ -3,11 +3,7 @@ import { useNavigate } from "react-router";
 import { LOGIN_PATH } from "@/const";
 import { supabase } from "@/lib/supabase";
 
-type User = {
-  name: string;
-  email: string;
-  role: "patient" | "doctor";
-};
+import type { User } from '@/types/auth';
 
 type UseAuthOptions = {
   redirectOnUnauthenticated?: boolean;
