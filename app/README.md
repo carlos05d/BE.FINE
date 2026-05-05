@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# 🚀 BE.Fine - Health Monitoring Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Vercel Deploy](https://vercel.com/button)](https://vercel.com/new/git/external)
 
-Currently, two official plugins are available:
+## ✨ Features
+- **Real-time Health Monitoring** - Smartwatch vitals tracking
+- **Dual Role System** - Patient & Doctor dashboards
+- **Supabase Auth** - Secure email/password login/register
+- **Responsive UI** - Modern Tailwind + shadcn/ui
+- **Role-Based Access** - Patient vitals | Doctor monitoring
+- **Crisis Alerts** - Instant notifications
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠 Tech Stack
+```
+Frontend: React 19 + Vite + TypeScript + React Router
+UI: shadcn/ui + Tailwind CSS + Lucide Icons
+Auth: Supabase (Auth + Postgres profiles)
+Charts: Recharts
+State: TanStack Query + tRPC ready
+Backend Ready: Hono + Drizzle + MySQL
+Deployment: Vercel (static)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Quick Start
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+- [Supabase Project](https://supabase.com) (URL + Anon Key)
+- Node.js 20+
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone & Install
+```bash
+cd app
+npm install
 ```
+
+### 2. Environment
+Copy `.env.example` → `.env`:
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 3. Database (Supabase SQL Editor)
+Run `migrations/profiles.sql`
+
+### 4. Run
+```bash
+npm run dev  # http://localhost:3000
+npm run build  # dist/ folder
+npm run preview
+```
+
+## 🌐 Deployment (Vercel)
+1. Push to GitHub
+2. vercel.com → Import repo
+3. Add VITE_SUPABASE_* env vars
+4. Deploy! ✅
+
+## 📱 Usage Flow
+```
+Home → Login/Register → Role Select → Dashboard
+Patient: Vitals charts + crisis button
+Doctor: Patients list + real-time monitoring
+```
+
+## 🔮 Future
+- [ ] Smartwatch WebBLE integration
+- [ ] WebSocket crisis alerts
+- [ ] tRPC fullstack
+- [ ] Patient-Doctor chat
+- [ ] Mobile PWA
+
+## 🤝 Contributing
+```
+1. Fork & PR
+2. `npm run format`
+3. `npm run lint`
+```
+
+**Made with ❤️ by BLACKBOXAI**
+
+![BE.Fine Demo](https://via.placeholder.com/1200x600/0f766e/ffffff?text=BE.Fine+-+Health+Platform)
+
